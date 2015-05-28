@@ -1,0 +1,73 @@
+<html>
+<head>
+<title> Unleash the Dragon </title>
+<script src="script/processing-1.4.1.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+    /*@pjs globalKeyEvents = "true"; */
+
+PImage dragon;
+PImage play;
+PImage instructions;
+
+void setup()
+{  
+   
+  	size(500, 500);  
+  	frameRate( 30 );
+
+	dragon = loadImage("Images/d_u.jpg");
+	play = loadImage("Images/p_b.jpg");
+	instructions = loadImage("Images/i_b.jpg");
+
+}  
+
+void draw()
+{
+	
+	image(dragon,0,0);
+
+
+//Play button
+	if (mouseX > 320 && mouseX < 370 && mouseY > 334 && mouseY < 365)
+    {	
+		image(play,283,329);
+	}
+
+    if (mousePressed == true && mouseButton == LEFT)
+	{    
+		if (mouseX > 320 && mouseX < 370 && mouseY > 334 && mouseY < 365)
+    	{	
+			link("Game.html");
+		}
+	}
+
+
+//instructions button
+	if (mouseX > 290 && mouseX < 402 && mouseY > 383 && mouseY < 418)
+    {	
+		image(instructions,283,379);
+	}
+
+    if (mousePressed == true && mouseButton == LEFT)
+	{    
+		if (mouseX > 290 && mouseX < 402 && mouseY > 383 && mouseY < 418)
+    	{	
+			link("Instructions.html");
+		}
+	}
+
+
+
+}
+     
+    
+    
+
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+
+<body>
+
+</body>
+</html>

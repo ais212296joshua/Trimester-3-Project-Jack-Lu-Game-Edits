@@ -1,0 +1,83 @@
+<html>
+<head>
+<title> Game Over </title>
+<script src="script/processing-1.4.1.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+    /*@pjs globalKeyEvents = "true"; */
+
+PImage background;
+PImage menu;
+PImage menub;
+PImage replay;
+PImage replayb;
+
+void setup()
+{  
+    size( 500, 500 );  
+    frameRate( 30 );
+    
+    background = loadImage("Images/Game Over.jpg");
+    
+	menu = loadImage("Images/Menu.png");
+	menub = loadImage("Images/Menu1.jpg");
+
+	replay = loadImage("Images/Replay.png");
+	replayb = loadImage("Images/Replay1.jpg");
+    
+}
+    
+    
+void draw()
+{
+	
+	image(background,0,0);
+	
+    
+//menu button
+    image(menu,310,280);
+    
+    if (mouseX > 310 && mouseX < 380 && mouseY > 280 && mouseY < 314)
+    {	
+		image(menub,310,280);
+	}
+
+    if(mousePressed == true && mouseButton == LEFT)
+	{    
+		if (mouseX > 310 && mouseX < 380 && mouseY > 280 && mouseY < 314)
+    	{	
+			link("index.html");
+		}
+	}
+
+
+
+    image(replay,300,335);
+    
+    if (mouseX > 300 && mouseX < 380 && mouseY > 335 && mouseY < 378)
+    {	
+		image(replayb,300,335);
+	}
+
+    if(mousePressed == true && mouseButton == LEFT)
+	{    
+		if (mouseX > 300 && mouseX < 380 && mouseY > 335 && mouseY < 378)
+    	{	
+			link("Game.html");
+		}
+	}
+
+
+
+}
+
+
+    
+
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+
+<body>
+
+</body>
+</html>

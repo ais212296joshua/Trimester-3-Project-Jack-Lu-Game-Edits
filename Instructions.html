@@ -1,0 +1,69 @@
+<html>
+<head>
+<title> Instructions  </title>
+<script src="script/processing-1.4.1.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+    /*@pjs globalKeyEvents = "true"; */
+
+PImage dragon;
+PImage menu;
+PImage menub;
+
+void setup()
+{  
+    size(500,500);  
+    frameRate( 30 );
+    
+	dragon = loadImage("Images/SoftLight.jpg");
+	menu = loadImage("Images/Menu.png");
+	menub = loadImage("Images/Menu1.jpg");
+}  
+
+void draw()
+{
+    background(255,255,255);
+    
+    image(dragon,0,0);
+
+//menu button
+    image(menu,310,430);
+    
+    if (mouseX > 310 && mouseX < 380 && mouseY > 435 && mouseY < 469)
+    {	
+		image(menub,310,430);
+	}
+
+    if(mousePressed == true && mouseButton == LEFT)
+	{    
+		if (mouseX > 310 && mouseX < 380 && mouseY > 435 && mouseY < 469)
+    	{	
+			link("index.html");
+		}
+	}
+    
+//instructions
+ 	fill(255,255,255);
+    text("Instructions:    Dodge all falling objects by moving",200,280);
+    text("left to right.",278,295);
+    text("Score:             Dodge for as long as possible for",200,330);
+    text("maximum score.",278,345);
+    text("Control:           Use Keyboards A and D to move",200,380);
+    text("left and right",278,395);
+
+    
+
+
+    
+}
+
+
+
+
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+
+<body>
+
+</body>
+</html>
